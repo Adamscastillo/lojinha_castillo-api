@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     require: true
   },
-  adress: {
+  address: {
     type: String,
     require: true
   },
@@ -39,7 +39,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true
   },
-  uf: {
+  UF: {
     type: String,
     require: true
   },
