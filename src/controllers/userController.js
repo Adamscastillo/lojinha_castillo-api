@@ -46,8 +46,8 @@ module.exports = {
     try {
 
       const { email, password } = req.body; //buscar pelo email e password no banco de dados e faz a autenticação
-      const user = await queryUser.findOne(email, true)
-      
+      const user = await queryUser.findOne({email: email}, true)
+      console.log(user);
       
       if (!user) //se o usuario nao exister retorna a mensagem de error
         return res.status(400).send({ error: "Usuário não cadastrado" });

@@ -23,18 +23,18 @@ module.exports = {
     },
 
     async delete (id){
-        const userdeleted = await User.deleteOne({fields:{id:id}}); 
-        console.log(userdeleted);
+        const userdeleted = await User.deleteOne({_id: id}); 
         return userdeleted
         
     },
 
     async findOne (data, fullFilds = false){
+       
         if (fullFilds){
-            const user = await User.findOne({data}).select('password');
+            const user = await User.findOne(data).select('password');
             return user
         }else{
-            const user = await User.findOne({data});
+            const user = await User.findOne(data);
             return user
         }
     },

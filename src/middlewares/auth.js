@@ -7,7 +7,7 @@ module.exports = (req, res, next) => { //
     const authHeader = req.headers.authorization //busca o header de autorização
 
     if(!authHeader)
-        return res.status(401).send({error: "token Não  autorizado"});// verifaca se existe o token valido ou infromado
+        return res.status(401).send({error: "token Não autorizado"});// verifaca se existe o token valido ou infromado
 
     const parts = authHeader.split(' '); // verifica o token e divide em 2 partes 
 
