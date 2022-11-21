@@ -14,12 +14,13 @@ router.put('/:id', authMiddleware, userController.updade);//rotas de atualizacao
 
 router.post('/auth', userController.auth) //rota de autenticação
 
+
+
+
+
+
+
 router.get('/projects', projectControler.find) // rota do project
-
-
-
-
-
 
 
 

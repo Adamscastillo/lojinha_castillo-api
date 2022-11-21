@@ -47,20 +47,16 @@ module.exports = {
 
       const { email, password } = req.body; //buscar pelo email e password no banco de dados e faz a autenticação
       const user = await queryUser.findOne({email: email}, true)
-      console.log(user);
       
       if (!user) //se o usuario nao exister retorna a mensagem de error
         return res.status(400).send({ error: "Usuário não cadastrado" });
 
-      if (!bcrypt.compare(password, user.password)) //ele verica se a senha digita e igual a senha criada e que esta no banco de dados usando o campare
-        return res.status(400).send({ error: "Senha ou Email invalidos" })
-
+      if (!await bcrypt.compare(password, user.password)) //ele verica se a senha digita e igual a senha criada e que esta no banco de dados usando o campare
+        return res.status(400).send({ error: "Senha ou Usario invalido" })
       user.password = undefined;
       
       // implementação do token
      const token = generateToken({ id: user.id }) // chamando funcao do token 
-      
-      
       res.json({ user, token, message: "logado com sucesso" })
      // return res.status(200).send({ message: "logado com sucesso"})  // da uma resposta se o usuario logou normalmente com o usuario
 

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');//vai me dizer com que iremos trabalha
 const morgan = require('morgan') //monitora rotas que estao sendo acessadas no app
 const cors = require('cors')//permite a conexao do mesmo local
 const app = express();  // executa o express e guardando em uma variavel chamada App
+require('dotenv').config() // chamando o dotenv
 
 
 const routerManager = require('../routes') // import da rotas

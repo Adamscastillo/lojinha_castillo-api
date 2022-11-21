@@ -8,10 +8,10 @@ module.exports = ()=> { //exportação de funcao pois a connection e uma funçã
     }).then(()=>{
         console.log('conectou ao BANCO!!!');
     }).catch((err)=> console.log(err)) 
-}  
- 
-/* 
-const dbUser = process.env.DB_USER
+}   
+
+
+/* const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASS
 
 
@@ -22,5 +22,5 @@ module.exports=()=>{
     ).then(()=>{
         console.log('conectou ao BANCO!!!');
     }).catch((err)=> console.log(err))
-} */
- 
+} 
+ */

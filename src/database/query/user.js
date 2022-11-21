@@ -31,7 +31,7 @@ module.exports = {
     async findOne (data, fullFilds = false){
        
         if (fullFilds){
-            const user = await User.findOne(data).select('password');
+            const user = await User.findOne(data).select("username email password cep address number district city UF ");
             return user
         }else{
             const user = await User.findOne(data);

@@ -4,10 +4,10 @@ const connection = require('./src/config/connection');//conexao com o arquivo de
 
 connection() //execução da funcao connection 
 
-const PORT_CONECTION = 4000 //importe da rota
+//const PORT_CONECTION = process.env.PORT //importe da rota
 
 //iniciando a rota em qual rota vai funcionar
-app.listen(PORT_CONECTION, ()=>{
+app.listen(process.env.PORT_CONECTION, ()=>{
     //funçao de callback depois que tiver funcioando excuta o console.log
     console.log ('Meu servidor esta funcionando');
 ;
