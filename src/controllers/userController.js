@@ -22,7 +22,7 @@ module.exports = {
   async create(req, res) {
     try {
       const user = req.body; //recebe o do corpo da requisição
-      console.log(user);
+      
       const userCreated = await queryUser.save(user); // cria e salva
       
       userCreated.password = undefined; // não apresenta o passaword
@@ -34,7 +34,7 @@ module.exports = {
       }); //resposta do corpo body
 
     } catch (err) {
-      res.json({ error: true, message: err.message }); //resposta do corpo body
+      res.json({ error: true, message: "Email já cadatrado" }); //resposta do corpo body
     }
   },
 
@@ -48,11 +48,12 @@ module.exports = {
       const { email, password } = req.body; //buscar pelo email e password no banco de dados e faz a autenticação
       const user = await queryUser.findOne({email: email}, true)
       
+      
       if (!user) //se o usuario nao exister retorna a mensagem de error
         return res.status(400).send({ error: "Usuário não cadastrado" });
 
       if (!await bcrypt.compare(password, user.password)) //ele verica se a senha digita e igual a senha criada e que esta no banco de dados usando o campare
-        return res.status(400).send({ error: "Senha ou Usario invalido" })
+        return res.status(400).send({ error: "Senha ou Usuário invalido" })
       user.password = undefined;
       
       // implementação do token
@@ -62,7 +63,7 @@ module.exports = {
 
     } catch (err) {
 
-      res.json({ error: true, message: err.message })
+      res.json({ error: true, message: "Usuário nao cadastrado" })
 
 
     }
