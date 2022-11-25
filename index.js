@@ -4,7 +4,7 @@ const connection = require('./src/config/connection');//conexao com o arquivo de
 
 connection() //execução da funcao connection 
 
-//const PORT_CONECTION = process.env.PORT //importe da rota
+const PORT_CONECTION = process.env.PORT //importe da rota
 
 //iniciando a rota em qual rota vai funcionar
 app.listen(process.env.PORT_CONECTION, ()=>{
