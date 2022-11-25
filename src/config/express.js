@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');//vai me dizer com que iremos trabalha
 const morgan = require('morgan') //monitora rotas que estao sendo acessadas no app
 const cors = require('cors')//permite a conexao do mesmo local
 const app = express();  // executa o express e guardando em uma variavel chamada App
-//import axios from "axios";
-//import qs from "query-string";
 
 
 
