@@ -18,9 +18,10 @@ const routerManager = require('../routes') // import da rotas
 const corsOptions = {
     origin: 'https://ecomerce-lojinha-castillo.vercel.app',
     optionsSuccessStatus: 200,
-    post: {
+    headers: {
         "Access-Control-Allow-Origin": true
-      }
+    }
+    
     
   }
 
