@@ -15,10 +15,18 @@ require('dotenv').config() // chamando o dotenv
 
 const routerManager = require('../routes') // import da rotas
 
+const corsOptions = {
+    origin: 'https://ecomerce-lojinha-castillo.vercel.app',
+    optionsSuccessStatus: 200,
+    post: {
+        "Access-Control-Allow-Origin": true
+      }
+    
+  }
 
 
 
-app.use(cors({allowedHeaders:"*",origin:'https://ecomerce-lojinha-castillo.vercel.app',  optionsSuccessStatus: 200,})); //chamando o cors
+app.use(cors(corsOptions)); //chamando o cors
 app.use(bodyParser.json()); //executa o bodyPaser para usar o json
 app.use(morgan('dev'))//ambiente de desenvolvimento 
 app.use('/v1', routerManager); // rota geral de versao, vai ser usado depois do Barra
