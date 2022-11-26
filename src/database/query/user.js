@@ -4,6 +4,7 @@ module.exports = {
     
     async find (){
         const users = await User.find({}); 
+        console.log(users);
         return users
     },
     
